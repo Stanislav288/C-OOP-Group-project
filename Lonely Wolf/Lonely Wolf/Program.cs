@@ -14,7 +14,7 @@ namespace Lonely_Wolf
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
+            using (var game = new LevelOne())
                 game.Run();
         }
     }
