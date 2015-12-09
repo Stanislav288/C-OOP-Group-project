@@ -1,33 +1,49 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Runtime.CompilerServices;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace Lonely_Wolf
 {
-    public class LevelOne : Game
+    public  class LevelOne : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public Texture2D imageMoveExample;
-        Vector2 imageMoveExamplePosition = Vector2.Zero;
+        public static Texture2D collisionExample;
+        Vector2 collisionExamplePosition = new Vector2(300,300);
 
         KeyboardState inputHandler;
-
-        private Animation crusaderRightWalk;
-        private Animation crusaderLeftWalk;
-        private Animation crusaderAttack_Right_Mid;
-        private Animation crusaderAttack_Left_Mid;
-        private Animation currentAnimation;
-
+        public Enemy enemy1=new Skeleton(new Rectangle(300,300,53,84),300,300,53,84 );
+      
+           
         public LevelOne()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-
+        public static Texture2D CollisionExample
+        {
+            get { return collisionExample; }
+            set { collisionExample = value; }
+        }/*
+        public static Animation CurrentAnimation
+        {
+            get {return currentAnimation; }
+        }
+        public static Animation CrusaderAttack_Right_Mid
+        {
+            get { return crusaderAttack_Right_Mid; }
+        }
+        public static Animation CrusaderAttack_Left_Mid
+        {
+            get { return crusaderAttack_Left_Mid; }
+        }
+       */
         protected override void Initialize()
         {
+           
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -36,13 +52,9 @@ namespace Lonely_Wolf
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            crusaderLeftWalk = new Animation(Content, "Crusader-walking_left", 150f, 12, true);
-            crusaderRightWalk = new Animation(Content, "Crusader-walking_right", 150f, 12, true);
-            crusaderAttack_Right_Mid = new Animation(Content, "Crusader-attack_right_mid", 150f, 7, true);
-            crusaderAttack_Left_Mid = new Animation(Content, "Crusader-attack_left_mid", 150f, 7, true);
-            currentAnimation = crusaderLeftWalk;
-           
+            //collisionExample = Content.Load<Texture2D>("collision");
+           Crusader.LoadCharacterContent(Content);
+           enemy1.LoadCharacterContent(Content);
 
         }
 
@@ -60,8 +72,15 @@ namespace Lonely_Wolf
                 Exit();
             }
             inputHandler = Keyboard.GetState();
-          currentAnimation= InputHandler.InputHandlerMethod(inputHandler,currentAnimation,crusaderLeftWalk,crusaderAttack_Left_Mid,crusaderAttack_Right_Mid,crusaderRightWalk,gameTime);
-          
+          Crusader.CurrentAnimation= InputHandler.InputHandlerMethod(
+              inputHandler,
+              Crusader.CurrentAnimation,
+              Crusader.CrusaderLeftWalk,
+              Crusader.CrusaderAttack_Left_Mid,
+              Crusader.CrusaderAttack_Right_Mid,
+              Crusader.CrusaderRightWalk,
+              gameTime);
+         
             base.Update(gameTime);
         }
 
@@ -70,7 +89,9 @@ namespace Lonely_Wolf
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            currentAnimation.Draw(spriteBatch);
+            Crusader.CurrentAnimation.Draw(spriteBatch);
+            //spriteBatch.Draw(collisionExample,collisionExamplePosition);
+            enemy1.CurrentEnemy.Draw(spriteBatch);
             spriteBatch.End();
 
 

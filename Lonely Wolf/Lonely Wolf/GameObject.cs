@@ -6,9 +6,9 @@ using Microsoft.Xna.Framework;
 
 namespace Lonely_Wolf
 {
-    class GameObject
+    public abstract class GameObject
     {
-        private static int id;
+        private  int id;
         private Rectangle rectangle;
         private int x;
         private int y;
@@ -23,9 +23,9 @@ namespace Lonely_Wolf
             this.Width=width;
             this.Height = height;
         }
-        public static int Id
+        public  int Id
         {
-            get { return id; }
+            get { return this.id; }
            private set { id = value; }
         }
         public Rectangle Rectangle

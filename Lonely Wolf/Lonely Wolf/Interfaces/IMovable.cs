@@ -9,6 +9,7 @@ namespace Lonely_Wolf.Interfaces
 {
     interface IMovable
     {
-        Vector2 Attack { get; set; }
+       // Vector2 Move { get; set; }
+         Vector2 Move();
     }
 }

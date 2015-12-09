@@ -33,18 +33,18 @@ namespace Lonely_Wolf
             this.frameHeight = (animation.Height/numberOfFrames);
             this.frameHeight = animation.Height;
         }
-
+       
        public  int  X
        {
-           get { return (int)MainCharacterPosition.Position.X; }
+           get { return   }
            set{ MainCharacterPosition.Position = new Vector2(value,MainCharacterPosition.Position.Y); }
        }
        public  int Y
        {
-           get { return (int)MainCharacterPosition.Position.Y; }
+           get { return (int)super.Position.Y; }
            set { MainCharacterPosition.Position = new Vector2( MainCharacterPosition.Position.X,value); }
        }
-
+       
        public int NumberOfFrames
        {
            get { return this.numberOfFrames; }
