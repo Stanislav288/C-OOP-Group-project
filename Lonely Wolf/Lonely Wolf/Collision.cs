@@ -9,25 +9,26 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Lonely_Wolf
 {
 
-    public  static class Collision
+    public   class Collision
     {
-        //private static Rectangle rect1=new Rectangle(LevelOne);
-       // private static Rectangle rect2;
+       
 
-        public static void DetectCollision()
+        public static void DetectCollision(Crusader crusader1,
+            Enemy enemy1)
         {
-            /*
-            Rectangle rect1 = new Rectangle(Crusader.CurrentAnimation.X, Crusader.CurrentAnimation.Y,
-            Crusader.CurrentAnimation.FrameWidth, Crusader.CurrentAnimation.FrameHeight);
-            Rectangle rect2 = new Rectangle(300,300,237, 109);
+            
+            //Rectangle rect1 = new Rectangle(Crusader.CurrentAnimation.X, Crusader.CurrentAnimation.Y,
+            //Crusader.CurrentAnimation.FrameWidth, Crusader.CurrentAnimation.FrameHeight);
+            //Rectangle rect2 = new Rectangle(300,300,237, 109);
 
-            if (rect1.Intersects(rect2) && (Crusader.CurrentAnimation == Crusader.CrusaderAttack_Left_Mid || Crusader.CurrentAnimation == Crusader.CrusaderAttack_Right_Mid))
-            {
-
-                Crusader.CurrentAnimation.X = 0;
-                Crusader.CurrentAnimation.Y = 0;
+            if ((crusader1.Rectangle).Intersects(enemy1.Rectangle) 
+                && (crusader1.CurrentAnimation == crusader1.CrusaderAttack_Left_Mid 
+                || crusader1.CurrentAnimation == crusader1.CrusaderAttack_Right_Mid))
+            {   
+                crusader1.X = 0;
+                crusader1.Y = 0;
             }
-             * */
+             
         }
     }
 }

@@ -9,19 +9,20 @@ namespace Lonely_Wolf
     public abstract class GameObject
     {
         private  int id;
-        private Rectangle rectangle;
         private int x;
         private int y;
         private int width;
         private int height;
+        private Rectangle rectangle;
 
-        public GameObject(Rectangle rectangle, int x, int y, int width, int height)
+        public GameObject( int x, int y, int width, int height,Rectangle rectangle)
         {
-            this.Rectangle = rectangle;
+            
             this.X = x;
             this.Y = y;
             this.Width=width;
             this.Height = height;
+            this.Rectangle = rectangle;
         }
         public  int Id
         {

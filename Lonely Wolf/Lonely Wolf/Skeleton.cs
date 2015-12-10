@@ -11,7 +11,8 @@ namespace Lonely_Wolf
     class Skeleton:Enemy
     {
         private Animation currentEnemy;
-        public Skeleton(Rectangle rectangle, int x, int y, int width, int height) : base(rectangle, x, y, width, height)
+        public Skeleton(int x, int y, int width, int height, Rectangle rectangle)
+            : base(x, y, width, height, rectangle)
         {
         }
 
@@ -23,7 +24,7 @@ namespace Lonely_Wolf
         
         public override void LoadCharacterContent(ContentManager Content)
         {
-            currentEnemy = new Animation(Content, "Skeleton_collision", 150f, 1, false);
+            currentEnemy = new Animation(Content,this, "Skeleton_collision", 150f, 1, false);
            
         }
     }

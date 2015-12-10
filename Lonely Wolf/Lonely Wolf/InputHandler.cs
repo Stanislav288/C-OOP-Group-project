@@ -10,8 +10,10 @@ namespace Lonely_Wolf
     {
 
 
-        public  Animation InputHandlerMethod(
-            KeyboardState inputHandler
+        public static Animation InputHandlerMethod(
+            KeyboardState inputHandler,
+            Crusader crusader1,
+            Enemy enemy1
             , Animation currentAnimation
             , Animation crusaderLeftWalk
             , Animation crusaderAttack_Left_Mid
@@ -19,10 +21,11 @@ namespace Lonely_Wolf
             Animation crusaderRightWalk,
             GameTime gameTime)
         {
-            Collision.DetectCollision();
+            Collision.DetectCollision(crusader1,enemy1);
                 if (inputHandler.IsKeyDown(Keys.Right))
                 {
-                    currentAnimation.X += 2;
+                    
+                   currentAnimation.X += 2;
                     currentAnimation = crusaderRightWalk;
                     currentAnimation.PlayAnimation(gameTime);
                 }

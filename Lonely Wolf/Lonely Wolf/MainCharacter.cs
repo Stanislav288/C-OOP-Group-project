@@ -9,7 +9,8 @@ namespace Lonely_Wolf
 {
    public  abstract class MainCharacter:Characters
     {
-       public MainCharacter(Rectangle rectangle, int x, int y, int width, int height) : base(rectangle, x, y, width, height)
+       public MainCharacter(int x, int y, int width, int height, Rectangle rectangle)
+           : base(x, y, width, height, rectangle)
        {
        }
     }

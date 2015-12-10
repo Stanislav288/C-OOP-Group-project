@@ -22,27 +22,30 @@ namespace Lonely_Wolf
         private int frameWidth;
         private int frameHeight;
         private bool looping;
-
-        public Animation(ContentManager Content,string asset,float frameSpeed,int numberOfFrames,bool looping)
+        private int x;
+        private int y;
+        private GameObject gameObject;
+        public Animation(ContentManager Content,GameObject gameObject,string asset,float frameSpeed,int numberOfFrames,bool looping)
         {
             this.frameTime = frameSpeed;
             this.NumberOfFrames = numberOfFrames;
             this.looping = looping;
             this.animation = Content.Load<Texture2D>(asset);
             this.FrameWidth = (animation.Width / numberOfFrames);
-            this.frameHeight = (animation.Height/numberOfFrames);
+            //this.frameHeight = (animation.Height/numberOfFrames);
             this.frameHeight = animation.Height;
+            this.gameObject = gameObject;
         }
        
        public  int  X
        {
-           get { return   }
-           set{ MainCharacterPosition.Position = new Vector2(value,MainCharacterPosition.Position.Y); }
+           get { return this.gameObject.X; }
+           set { gameObject.X = value; }
        }
        public  int Y
        {
-           get { return (int)super.Position.Y; }
-           set { MainCharacterPosition.Position = new Vector2( MainCharacterPosition.Position.X,value); }
+           get { return this.gameObject.Y; }
+           set { gameObject.Y = value; }
        }
        
        public int NumberOfFrames
@@ -94,7 +97,7 @@ namespace Lonely_Wolf
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(animation, MainCharacterPosition.Position, sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
+            spriteBatch.Draw(animation, new Vector2(gameObject.X,gameObject.Y), sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
         }
     }
 }

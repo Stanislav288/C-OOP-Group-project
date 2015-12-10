@@ -45,6 +45,7 @@
     <Compile Include="Crusader.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="HealthBar.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Interfaces\IAttackable.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
@@ -79,6 +80,12 @@
     <Content Include="Content\Crusader-walking_right.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\HealthBar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\HealthGauge.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Skeleton_collision.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -86,9 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

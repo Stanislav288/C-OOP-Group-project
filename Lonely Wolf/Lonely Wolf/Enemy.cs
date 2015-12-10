@@ -9,22 +9,14 @@ namespace Lonely_Wolf
 {
     public abstract class Enemy:Characters
     {
-        private static List<Enemy> enemiesList=new List<Enemy>();
-        
-        public Enemy(Rectangle rectangle, int x, int y, int width, int height) : base(rectangle, x, y, width, height)
-        {
-            AddEnemy();
-        }
 
-        public static List<Enemy> EnemiesList
+        public Enemy(int x, int y, int width, int height, Rectangle rectangle)
+            : base(x, y, width, height, rectangle)
         {
-            get {return enemiesList; }          
+            
         }
-
+     
         public virtual Animation CurrentEnemy { get; set; }
-        private  void AddEnemy()
-        {
-            EnemiesList.Add(this);
-        }
+       
     }
 }
