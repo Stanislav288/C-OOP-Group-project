@@ -66,11 +66,7 @@ namespace Lonely_Wolf
             get { return this.frameHeight; }
             private set { this.frameHeight = value; }
         }
-        public int CurrentFrame
-        {
-            get { return this.currentFrame; }
-            private set { this.currentFrame = value; }
-        }
+
        public Rectangle SourceRectangle
        {
            get { return this.sourceRectangle; }

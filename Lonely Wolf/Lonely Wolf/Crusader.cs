@@ -23,19 +23,9 @@ namespace Lonely_Wolf
        {
        }*/
 
-<<<<<<< HEAD
-       
        public Crusader(int x, int y, int width, int height, Rectangle rectangle)
            : base( x, y, width, height,rectangle)
-=======
-       public Crusader(int x, int y, int width, int height, Rectangle rectangle, int healthPoint, int attackPoins, int defensePoints, int range)
-           : base( x, y, width, height,rectangle ,healthPoint, attackPoins, defensePoints, range)
->>>>>>> origin/master
        {
-           this.HealthPoints = (int)Enums.CrusaderStats.Health;
-           this.AttackPoints = (int)Enums.CrusaderStats.Attack;
-           this.DefensePoints = (int)Enums.CrusaderStats.Defense;
-           this.CurrentHealth = this.HealthPoints;
        }
 
        public  Animation CurrentAnimation
@@ -61,8 +51,6 @@ namespace Lonely_Wolf
        }
 
 
-      
-
        public  void LoadCharacterContent(ContentManager Content)
        {
            crusaderLeftWalk = new Animation(Content, this, "Crusader-walking_left", 150f, 12, true);
@@ -70,8 +58,8 @@ namespace Lonely_Wolf
            crusaderAttack_Right_Mid = new Animation(Content, this, "Crusader-attack_right_mid", 150f, 7, true);
            crusaderAttack_Left_Mid = new Animation(Content, this, "Crusader-attack_left_mid", 150f, 7, true);
            currentAnimation = crusaderLeftWalk;
-           this.HealthBar = new HealthBar(Content, this);
-        
-       }     
+        this.HealthBar = new HealthBar(Content, this);
+       }
+      
    }
 }

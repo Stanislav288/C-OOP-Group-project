@@ -8,6 +8,6 @@ namespace Lonely_Wolf.Interfaces
 {
     interface IAttackable
     {
-        int AttackPoints { get; set; }
+        double Attack { get; set; }
     }
 }
