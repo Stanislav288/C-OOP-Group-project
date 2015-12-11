@@ -10,8 +10,8 @@ namespace Lonely_Wolf
     public abstract class Enemy:Characters
     {
 
-        public Enemy(int x, int y, int width, int height, Rectangle rectangle)
-            : base(x, y, width, height, rectangle)
+        public Enemy(int x, int y, int width, int height, Rectangle rectangle,int healthPoint, int attackPoins, int defensePoints, int range)
+            : base(x, y, width, height, rectangle,healthPoint,attackPoins,defensePoints,range)
         {
             
         }

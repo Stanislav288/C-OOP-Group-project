@@ -17,14 +17,19 @@ namespace Lonely_Wolf
         private int attackPoints;
         private int defensePoints;
         private HealthBar currentHealth;
-
-        
-        protected Characters(int x, int y, int width, int height,Rectangle rectangle)
+        private bool isAlive = true;
+        protected Characters(int x, int y, int width, int height,Rectangle rectangle,int healthPoint,int attackPoins,int defensePoints,int range)
             : base(x, y, width, height, rectangle)
         {
-            AddCharacter();
+            this.Health = healthPoint;
+            this.Defense = defensePoints;
+            this.Range = range;
+             AddCharacter();
         }
 
+
+        public int Range { get; set; }
+        public int Defense { get; set; }
         public double Attack { get; set; }
                        
         public Vector2 Move()
@@ -39,7 +44,8 @@ namespace Lonely_Wolf
         }
 
         public HealthBar HealthBar { get; set; }
-        public int HealthPoints { get; set; }
+        public int Health { get; set; }
+        
 
         public static List<Characters> CharactersList
         {
