@@ -18,6 +18,7 @@ namespace Lonely_Wolf
         public Enemy enemy1 = new Skeleton(200, 200, 53, 84, new Rectangle(200, 200, 53, 84),100,100,100,100);
 
         public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 50, 50), 100, 100, 100, 100);
+       
         public LevelOne()
         {
             graphics = new GraphicsDeviceManager(this);
