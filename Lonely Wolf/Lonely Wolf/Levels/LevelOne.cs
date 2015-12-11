@@ -17,8 +17,8 @@ namespace Lonely_Wolf
         KeyboardState inputHandler;
         public Enemy enemy1 = new Skeleton(200, 200, 53, 84, new Rectangle(200, 200, 53, 84),100,100,100,100);
 
-        public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 50, 50), 100, 100, 100, 100);
-       
+        public Crusader crusader1 = new Crusader(90, 90, 50, 50, new Rectangle(90, 90, 50, 50), 100, 100, 100, 100);
+        public Enemy enemy2 = new Skeleton(150, 150, 53, 84, new Rectangle(200, 200, 53, 84), 100, 100, 100, 100);
         public LevelOne()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -43,7 +43,7 @@ namespace Lonely_Wolf
             //collisionExample = Content.Load<Texture2D>("collision");
            crusader1.LoadCharacterContent(Content);
            enemy1.LoadCharacterContent(Content);
-
+            enemy2.LoadCharacterContent(Content);
         }
 
 
@@ -70,8 +70,9 @@ namespace Lonely_Wolf
               crusader1.CrusaderAttack_Right_Mid,
               crusader1.CrusaderRightWalk,
               gameTime);
-         enemy1.CurrentEnemy.PlayAnimation(gameTime);
-
+            crusader1.GetTargets();
+            enemy1.CurrentEnemy.PlayAnimation(gameTime);
+           enemy2.CurrentEnemy.PlayAnimation(gameTime);
             crusader1.HealthBar.Update();
             base.Update(gameTime);           
         }
@@ -84,6 +85,7 @@ namespace Lonely_Wolf
             crusader1.CurrentAnimation.Draw(spriteBatch);
             //spriteBatch.Draw(collisionExample,collisionExamplePosition);
             enemy1.CurrentEnemy.Draw(spriteBatch);
+            enemy2.CurrentEnemy.Draw(spriteBatch);
             crusader1.HealthBar.Draw(spriteBatch);
             spriteBatch.End();
 
