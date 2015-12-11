@@ -21,7 +21,7 @@ namespace Lonely_Wolf
             Animation crusaderRightWalk,
             GameTime gameTime)
         {
-            Collision.DetectCollision(crusader1,enemy1);
+            Collision.DetectCollision(crusader1);
                 if (inputHandler.IsKeyDown(Keys.Right))
                 {
                     
