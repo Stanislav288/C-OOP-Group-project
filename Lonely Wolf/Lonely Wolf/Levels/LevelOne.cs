@@ -17,7 +17,7 @@ namespace Lonely_Wolf
         KeyboardState inputHandler;
         public Enemy enemy1 = new Skeleton(200, 200, 53, 84, new Rectangle(200, 200, 53, 84));
 
-        public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 50, 50));
+        public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 75, 110));
         public LevelOne()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -71,7 +71,8 @@ namespace Lonely_Wolf
               gameTime);
          enemy1.CurrentEnemy.PlayAnimation(gameTime);
 
-            crusader1.HealthBar.Update();
+            crusader1.Update();
+            enemy1.Update();
             base.Update(gameTime);           
         }
 
@@ -83,7 +84,11 @@ namespace Lonely_Wolf
             crusader1.CurrentAnimation.Draw(spriteBatch);
             //spriteBatch.Draw(collisionExample,collisionExamplePosition);
             enemy1.CurrentEnemy.Draw(spriteBatch);
+            enemy1.HealthBar.Draw(spriteBatch);
             crusader1.HealthBar.Draw(spriteBatch);
+           
+            //spriteBatch.Draw(spriteTexture, SpriteREct, SpriteColor);
+           // crusader1.Rectangle.
             spriteBatch.End();
 
 

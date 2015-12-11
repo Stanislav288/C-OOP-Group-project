@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 namespace Lonely_Wolf
 {
 
-   public class Animation
+    public class Animation
     {
         Texture2D animation;
         private Rectangle sourceRectangle;
@@ -25,7 +25,7 @@ namespace Lonely_Wolf
         private int x;
         private int y;
         private GameObject gameObject;
-        public Animation(ContentManager Content,GameObject gameObject,string asset,float frameSpeed,int numberOfFrames,bool looping)
+        public Animation(ContentManager Content, GameObject gameObject, string asset, float frameSpeed, int numberOfFrames, bool looping)
         {
             this.frameTime = frameSpeed;
             this.NumberOfFrames = numberOfFrames;
@@ -36,29 +36,29 @@ namespace Lonely_Wolf
             this.frameHeight = animation.Height;
             this.gameObject = gameObject;
         }
-       
-       public  int  X
-       {
-           get { return this.gameObject.X; }
-           set { gameObject.X = value; }
-       }
-       public  int Y
-       {
-           get { return this.gameObject.Y; }
-           set { gameObject.Y = value; }
-       }
-       
-       public int NumberOfFrames
-       {
-           get { return this.numberOfFrames; }
-           private set { this.numberOfFrames = value; }
 
-       }
+        public int X
+        {
+            get { return this.gameObject.X; }
+            set { gameObject.X = value; }
+        }
+        public int Y
+        {
+            get { return this.gameObject.Y; }
+            set { gameObject.Y = value; }
+        }
+
+        public int NumberOfFrames
+        {
+            get { return this.numberOfFrames; }
+            private set { this.numberOfFrames = value; }
+
+        }
 
         public int FrameWidth
         {
             get { return this.frameWidth; }
-           private set { this.frameWidth = value; }
+            private set { this.frameWidth = value; }
         }
 
         public int FrameHeight
@@ -66,16 +66,20 @@ namespace Lonely_Wolf
             get { return this.frameHeight; }
             private set { this.frameHeight = value; }
         }
-
-       public Rectangle SourceRectangle
-       {
-           get { return this.sourceRectangle; }
-           set { this.sourceRectangle = value; }
-       }
+        public int CurrentFrame
+        {
+            get { return this.currentFrame; }
+            private set { this.currentFrame = value; }
+        }
+        public Rectangle SourceRectangle
+        {
+            get { return this.sourceRectangle; }
+            set { this.sourceRectangle = value; }
+        }
         public void PlayAnimation(GameTime gameTime)
         {
-            elapsed += (float) gameTime.ElapsedGameTime.TotalMilliseconds;
-            sourceRectangle=new Rectangle(currentFrame*frameWidth,0,frameWidth,frameHeight);
+            elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            sourceRectangle = new Rectangle(currentFrame * frameWidth, 0, frameWidth, frameHeight);
 
             if (elapsed >= frameTime)
             {
@@ -97,7 +101,7 @@ namespace Lonely_Wolf
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(animation, new Vector2(gameObject.X,gameObject.Y), sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
+            spriteBatch.Draw(animation, new Vector2(gameObject.X, gameObject.Y), sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
         }
     }
 }

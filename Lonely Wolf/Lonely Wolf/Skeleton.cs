@@ -8,24 +8,30 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Lonely_Wolf
 {
-    class Skeleton:Enemy
+    class Skeleton : Enemy
     {
-        private Animation currentEnemy;
+        private Animation _currentEnemy;
         public Skeleton(int x, int y, int width, int height, Rectangle rectangle)
             : base(x, y, width, height, rectangle)
         {
+            this.HealthPoints = (int)Enums.SkeletonStats.Health;
+            this.AttackPoints = (int)Enums.SkeletonStats.Attack;
+            this.DefensePoints = (int)Enums.SkeletonStats.Defense;
+            this.CurrentHealth = this.HealthPoints;
         }
 
         public override Animation CurrentEnemy
         {
-            get { return this.currentEnemy; }
-            set { this.currentEnemy = value; }
+            get { return this._currentEnemy; }
+            set { this._currentEnemy = value; }
         }
-        
+
+
+
         public override void LoadCharacterContent(ContentManager Content)
         {
-            currentEnemy = new Animation(Content,this, "Skeleton_collision", 150f, 1, false);
-           
+            _currentEnemy = new Animation(Content, this, "Skeleton_collision", 150f, 1, false);
+            this.HealthBar = new HealthBar(Content, this);
         }
     }
 }
