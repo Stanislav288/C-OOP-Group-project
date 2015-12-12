@@ -79,21 +79,21 @@ namespace Lonely_Wolf
         public void PlayAnimation(GameTime gameTime)
         {
             elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            sourceRectangle = new Rectangle(currentFrame * frameWidth, 0, frameWidth, frameHeight);
+            sourceRectangle = new Rectangle(this.CurrentFrame * frameWidth, 0, frameWidth, frameHeight);
 
             if (elapsed >= frameTime)
             {
-                if (currentFrame >= numberOfFrames - 1)
+                if (this.CurrentFrame >= numberOfFrames - 1)
                 {
                     if (looping)
                     {
-                        currentFrame = 0;
+                        this.CurrentFrame = 0;
                     }
 
                 }
                 else
                 {
-                    currentFrame++;
+                    this.CurrentFrame++;
                 }
                 elapsed = 0;
             }

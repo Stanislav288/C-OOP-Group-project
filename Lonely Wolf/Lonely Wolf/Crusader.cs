@@ -15,7 +15,8 @@ namespace Lonely_Wolf
         private Animation crusaderAttack_Right_Mid;
         private Animation crusaderAttack_Left_Mid;
         private Animation currentAnimation;
-
+        private bool isAttackAvaible;
+        private bool isFirstAttack = true;
 
 
         /*
@@ -55,7 +56,34 @@ namespace Lonely_Wolf
         }
 
 
-
+        public bool IsAttackAvaible
+        {
+            get { return this.isAttackAvaible; }
+            set { this.isAttackAvaible = false; }
+        }
+        public bool IsAttackAvaibleMethod()
+        {/*
+            if (this.CurrentAnimation.CurrentFrame != 4)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }*/
+            if (this.CurrentAnimation.CurrentFrame != 4)
+            {
+                this.isFirstAttack = true;
+            }
+            if (this.CurrentAnimation.CurrentFrame == 4 && this.isFirstAttack)
+            {
+                this.isFirstAttack = false;
+                return true;
+            }
+            
+                return false;
+          
+        }
 
         public void LoadCharacterContent(ContentManager Content)
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Web.UI.WebControls;
@@ -19,6 +20,7 @@ namespace Lonely_Wolf
         private int healthBarWidth;
         private Color barColor;
         private Characters currentCharacters;
+        private int previousHealth;
 
         public HealthBar(ContentManager content, Characters currentCharacters)
         {
@@ -62,6 +64,11 @@ namespace Lonely_Wolf
         }
         */
 
+        private int PreviousHealth
+        {
+            get { return this.previousHealth; }
+            set { this.previousHealth = value; }
+        }
         public void LoadContent(ContentManager content)
         {
             container = content.Load<Texture2D>("healthBar");
@@ -80,13 +87,7 @@ namespace Lonely_Wolf
              * */
             this.Position = new Vector2(X, Y);
         }
-
-        public int IHaveToDeleteThisBar
-        {
-            get { return (int)(this.healthBarWidth * (this.CurrentCharacters.CurrentHealth / (float)this.CurrentCharacters.HealthPoints)); }
-        }
-
-
+    
         public void Draw(SpriteBatch spriteBatch)
         {
 
@@ -95,10 +96,16 @@ namespace Lonely_Wolf
                 , barColor);
             spriteBatch.Draw(container, Position, Color.White);
         }
-
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern uint MessageBox(IntPtr hWnd, String text, String caption, uint type);
         public void HealthColor()
         {
-            this.healthBarWidth = (int)(healthBarWidth * (this.CurrentCharacters.CurrentHealth / (double)this.CurrentCharacters.HealthPoints));
+            if (CurrentCharacters.CurrentHealth != this.PreviousHealth)
+            {
+                this.healthBarWidth = (int)(lifeBar.Width * (this.CurrentCharacters.CurrentHealth / (decimal)this.CurrentCharacters.HealthPoints));
+               // MessageBox(new IntPtr(0), this.healthBarWidth + "healthbarwidth", "Warning", 3);
+                this.PreviousHealth = CurrentCharacters.CurrentHealth;
+            }
             if (healthBarWidth >= lifeBar.Width * 0.75)
             {
                 barColor = Color.Green;

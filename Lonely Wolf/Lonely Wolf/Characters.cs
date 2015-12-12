@@ -19,6 +19,7 @@ namespace Lonely_Wolf
         private int defensePoints;
         private HealthBar healthBar;
         private int currentHealth;
+
         protected Characters(int x, int y, int width, int height, Rectangle rectangle)
             : base(x, y, width, height, rectangle)
         {
@@ -77,13 +78,12 @@ namespace Lonely_Wolf
         {
             this.HealthBar.Update();
             this.Rectangle = new Rectangle(this.X, this.Y, base.Rectangle.Width, base.Rectangle.Height);
-        }
-
+        }     
         public virtual void LoadCharacterContent(ContentManager Content)
         {
 
         }
 
-        public double Attack { get; set; }
+       
     }
 }
