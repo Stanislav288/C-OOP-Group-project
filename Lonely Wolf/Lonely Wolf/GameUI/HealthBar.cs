@@ -46,23 +46,11 @@ namespace Lonely_Wolf
 
         public int Y
         {
-            get { return this.CurrentCharacters.Y; }
+            get { return this.CurrentCharacters.Y-10; }
             private set { CurrentCharacters.Y = value; }
         }
 
-        public Vector2 Position { get; set; }
-        /*
-        public int X
-        {
-            get { return (int)this.GameObject.X; }
-            // set {this.position=new Vector2(value,this.position.Y); }
-        }
-        public int Y
-        {
-            get { return (int)this.GameObject.Y - 50; }
-            //set { this.position = new Vector2((int)this.position.X, value); }
-        }
-        */
+        //public Vector2 Position { get; set; }
 
         private int PreviousHealth
         {
@@ -85,16 +73,16 @@ namespace Lonely_Wolf
                 currentHealth--;
             }
              * */
-            this.Position = new Vector2(X, Y);
+            //this.Position = new Vector2(X, Y);
         }
     
         public void Draw(SpriteBatch spriteBatch)
         {
-
-            spriteBatch.Draw(this.lifeBar, Position, new Rectangle(X, Y,
+           
+            spriteBatch.Draw(this.lifeBar, new Rectangle(this.X,this. Y,
                 this.healthBarWidth, this.lifeBar.Height)
                 , barColor);
-            spriteBatch.Draw(container, Position, Color.White);
+            spriteBatch.Draw(container, new Vector2(this.X,this.Y), Color.White);
         }
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern uint MessageBox(IntPtr hWnd, String text, String caption, uint type);

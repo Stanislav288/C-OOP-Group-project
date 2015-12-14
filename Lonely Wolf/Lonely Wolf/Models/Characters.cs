@@ -1,4 +1,3 @@
-﻿
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,22 +18,19 @@ namespace Lonely_Wolf
         private int defensePoints;
         private HealthBar healthBar;
         private int currentHealth;
+        private Animation walkingRight;
+        private Animation walkingLeft;
+        private Animation attack_Right_Mid;
+        private Animation attack_Left_Mid;
+        private Animation currentAnimation;
+        private bool isAttackAvaible;
+        private bool isFirstAttack = true;
 
         protected Characters(int x, int y, int width, int height, Rectangle rectangle)
             : base(x, y, width, height, rectangle)
         {
 
         }
-        /*
-        protected Characters(int x, int y, int width, int height, Rectangle rectangle, int healthPoints, int attackPoints, int defensePoints)
-            : base(x, y, width, height, rectangle)
-        {
-            this.AttackPoints = attackPoints;
-            this.HealthPoints = healthPoints;
-            this.DefensePoints = defensePoints;
-            this.CurrentHealth = healthPoints;
-        }
-        */
         public int CurrentHealth
         {
             get { return this.currentHealth; }
@@ -65,19 +61,53 @@ namespace Lonely_Wolf
 
             throw new NotImplementedException();
         }
-        /*
-        public int X
+        public Animation CurrentAnimation
         {
-            get { return this.x; }
-            set { this.x = value; }
+            get { return  this.currentAnimation; }
+            set { this.currentAnimation = value; }
         }
-        */
+        public Animation WalkingRight
+        {
+            get { return this.walkingRight; }
+            set { this.walkingRight = value; }
+        }
+        public Animation WalkingLeft
+        {
+            get { return this.walkingLeft; }
+            set { this.walkingLeft = value; }
+        }
+        public Animation Attack_Right_Mid
+        {
+            get { return attack_Right_Mid; }
+            set { this.attack_Right_Mid = value; }
+        }
+        public Animation Attack_Left_Mid
+        {
+            get { return attack_Left_Mid; }
+            set { this.attack_Left_Mid = value; }
+        }
+
         public HealthBar HealthBar { get; set; }
 
-        public virtual void Update()
+        public bool IsAttackAvaibleMethod()
+        {
+            if (this.CurrentAnimation.CurrentFrame != 4)
+            {
+                this.isFirstAttack = true;
+            }
+            if (this.CurrentAnimation.CurrentFrame == 4 && this.isFirstAttack)
+            {
+                this.isFirstAttack = false;
+                return true;
+            }
+
+            return false;
+        }
+        public virtual void Update(GameTime gameTime)
         {
             this.HealthBar.Update();
             this.Rectangle = new Rectangle(this.X, this.Y, base.Rectangle.Width, base.Rectangle.Height);
+            //this.CurrentAnimation.PlayAnimation(gameTime);
         }     
         public virtual void LoadCharacterContent(ContentManager Content)
         {

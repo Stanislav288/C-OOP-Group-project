@@ -10,65 +10,59 @@ namespace Lonely_Wolf
     {
 
 
-        public static Animation InputHandlerMethod(
+        public static void InputHandlerMethod(
             KeyboardState inputHandler,
-            Crusader crusader1,
-            Enemy enemy1
-            , Animation currentAnimation
-            , Animation crusaderLeftWalk
-            , Animation crusaderAttack_Left_Mid
-            , Animation crusaderAttack_Right_Mid,
-            Animation crusaderRightWalk,
+           MainCharacter crusader,
             GameTime gameTime)
         {
-            Collision.DetectCollision(crusader1);
+
             if (inputHandler.IsKeyDown(Keys.Right))
             {
 
-                currentAnimation.X += 2;
-                currentAnimation = crusaderRightWalk;
-                currentAnimation.PlayAnimation(gameTime);
+                crusader.CurrentAnimation.X += 2;
+                crusader.CurrentAnimation = crusader.WalkingRight;
+                crusader.CurrentAnimation.PlayAnimation(gameTime);
             }
             else if (inputHandler.IsKeyDown(Keys.Left))
             {
-                currentAnimation.X -= 2;
-                currentAnimation = crusaderLeftWalk;
-                currentAnimation.PlayAnimation(gameTime);
+                crusader.CurrentAnimation.X -= 2;
+                crusader.CurrentAnimation = crusader.WalkingLeft;
+                crusader.CurrentAnimation.PlayAnimation(gameTime);
             }
             else if (inputHandler.IsKeyDown(Keys.Down))
             {
-                currentAnimation = currentAnimation == crusaderLeftWalk ? crusaderLeftWalk : crusaderRightWalk;
-                currentAnimation.Y += 2;
-                currentAnimation.PlayAnimation(gameTime);
+                crusader.CurrentAnimation = crusader.CurrentAnimation == crusader.WalkingLeft ? crusader.WalkingLeft : crusader.WalkingRight;
+                crusader.CurrentAnimation.Y += 2;
+                crusader.CurrentAnimation.PlayAnimation(gameTime);
                 // currentAnimation = crusaderLeftWalk;
             }
             else if (inputHandler.IsKeyDown(Keys.Up))
             {
-                currentAnimation = currentAnimation == crusaderLeftWalk ? crusaderLeftWalk : crusaderRightWalk;
-                currentAnimation.Y -= 2;
-                currentAnimation.PlayAnimation(gameTime);
+                crusader.CurrentAnimation = crusader.CurrentAnimation == crusader.WalkingLeft ? crusader.WalkingLeft : crusader.WalkingRight;
+                crusader.CurrentAnimation.Y -= 2;
+                crusader.CurrentAnimation.PlayAnimation(gameTime);
                 // currentAnimation = crusaderLeftWalk;
             }
             else if (inputHandler.IsKeyDown(Keys.Space))
             {
-                if (currentAnimation == crusaderRightWalk || currentAnimation == crusaderAttack_Right_Mid)
+                if (crusader.CurrentAnimation == crusader.WalkingRight || crusader.CurrentAnimation == crusader.Attack_Right_Mid)
                 {
-                    currentAnimation = crusaderAttack_Right_Mid;
-                    currentAnimation.PlayAnimation(gameTime);
+                    crusader.CurrentAnimation = crusader.Attack_Right_Mid;
+                    crusader.CurrentAnimation.PlayAnimation(gameTime);
                 }
                 else
                 {
-                    currentAnimation = crusaderAttack_Left_Mid;
-                    currentAnimation.PlayAnimation(gameTime);
+                    crusader.CurrentAnimation = crusader.Attack_Left_Mid;
+                    crusader.CurrentAnimation.PlayAnimation(gameTime);
                 }
             }
             else
             {
-                currentAnimation.SourceRectangle = new Rectangle(0, 0, currentAnimation.FrameWidth,
-                    currentAnimation.FrameHeight);
+                crusader.CurrentAnimation.SourceRectangle = new Rectangle(0, 0, crusader.CurrentAnimation.FrameWidth,
+                     crusader.CurrentAnimation.FrameHeight);
             }
 
-            return currentAnimation;
+            //return currentAnimation;
 
         }
 

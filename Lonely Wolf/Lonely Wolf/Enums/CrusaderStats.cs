@@ -2,7 +2,7 @@
 {
     public enum CrusaderStats
     {
-        Attack = 50,
+        Attack = 20,
         Defense = 25,
         Health = 350
     }

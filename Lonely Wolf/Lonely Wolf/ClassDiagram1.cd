@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Lonely_Wolf.Animation" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AADIAAAAgAAAAgAAAAQAAIRAACAgRAAgAgRgAAAAYAA=</HashCode>
+      <FileName>Animation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.Collision" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Collision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.GameObject" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAAAAAQAQAAAAGAAAAAgAAAAAABgAAAAYgA=</HashCode>
+      <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.HealthBar" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>NgQAgBAIAAQAAwAgAAAAIAAAAAAAAAAAAAAAACAAYAQ=</HashCode>
+      <FileName>HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.InputHandler" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>InputHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.LevelOne" Collapsed="true">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAAAAAAwAAAAAAAAAAAAAEAAgAAEEAABAAAEY=</HashCode>
+      <FileName>Levels\LevelOne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.Characters" Collapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQIAAAEAAAAgAAQQIAAAEAAACABBgAQAQAAA=</HashCode>
+      <FileName>Models\Characters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lonely_Wolf.Crusader" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQBAAAAAggAAgAAAAIAAAAAkAAAADAAADIAAAADA=</HashCode>
+      <FileName>Models\Crusader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.Enemy" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAAAAAgA=</HashCode>
+      <FileName>Models\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.MainCharacter" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAABAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MainCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.Skeleton" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAAAAAAAQAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Skeleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.Program" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lonely_Wolf.Models.AI" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Lonely_Wolf.Interfaces.IArtificialIntellect" Collapsed="true">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IArtificialIntellect.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Lonely_Wolf.Interfaces.IAttackable" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Contracts\IAttackable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Lonely_Wolf.Interfaces.IMovable" Collapsed="true">
+    <Position X="9" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IMovable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Lonely_Wolf.Enums.CrusaderStats" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Enums\CrusaderStats.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Lonely_Wolf.Enums.SkeletonStats" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Enums\SkeletonStats.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

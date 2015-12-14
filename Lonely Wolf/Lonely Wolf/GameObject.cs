@@ -15,7 +15,7 @@ namespace Lonely_Wolf
         private int height;
         private Rectangle rectangle;
 
-        public GameObject(int x, int y, int width, int height, Rectangle rectangle)
+        protected GameObject(int x, int y, int width, int height, Rectangle rectangle)
         {
 
             this.X = x;

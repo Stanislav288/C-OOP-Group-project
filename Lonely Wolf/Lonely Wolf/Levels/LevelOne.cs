@@ -15,19 +15,16 @@ namespace Lonely_Wolf
         Vector2 collisionExamplePosition = new Vector2(300,300);
 
         KeyboardState inputHandler;
+        public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 75, 110));
         public Enemy enemy1 = new Skeleton(200, 200, 53, 84, new Rectangle(200, 200, 53, 84));
 
-        public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 75, 110));
+       
         public LevelOne()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-        public  Texture2D CollisionExample
-        {
-            get { return collisionExample; }
-            set { collisionExample = value; }
-        }
+      
         protected override void Initialize()
         {
            
@@ -58,21 +55,16 @@ namespace Lonely_Wolf
             {
                 Exit();
             }
+            CollisionEngine.DetectCollision(gameTime);
             inputHandler = Keyboard.GetState();
-          crusader1.CurrentAnimation= InputHandler.InputHandlerMethod(
+          InputHandler.InputHandlerMethod(
               inputHandler,   
               crusader1,
-              enemy1,
-              crusader1.CurrentAnimation,
-              crusader1.CrusaderLeftWalk,
-              crusader1.CrusaderAttack_Left_Mid,
-              crusader1.CrusaderAttack_Right_Mid,
-              crusader1.CrusaderRightWalk,
               gameTime);
-         enemy1.CurrentEnemy.PlayAnimation(gameTime);
+         //enemy1.CurrentAnimation.PlayAnimation(gameTime);
 
-            crusader1.Update();
-            enemy1.Update();
+          crusader1.Update(gameTime);
+          enemy1.Update(gameTime);
             base.Update(gameTime);           
         }
 
@@ -83,7 +75,7 @@ namespace Lonely_Wolf
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             crusader1.CurrentAnimation.Draw(spriteBatch);
             //spriteBatch.Draw(collisionExample,collisionExamplePosition);
-            enemy1.CurrentEnemy.Draw(spriteBatch);
+            enemy1.CurrentAnimation.Draw(spriteBatch);
             enemy1.HealthBar.Draw(spriteBatch);
             crusader1.HealthBar.Draw(spriteBatch);
            

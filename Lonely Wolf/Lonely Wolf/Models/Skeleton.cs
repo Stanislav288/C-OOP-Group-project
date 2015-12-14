@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.UI.WebControls;
+using Lonely_Wolf.Models;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 
@@ -10,7 +11,7 @@ namespace Lonely_Wolf
 {
     class Skeleton : Enemy
     {
-        private Animation _currentEnemy;
+      
         public Skeleton(int x, int y, int width, int height, Rectangle rectangle)
             : base(x, y, width, height, rectangle)
         {
@@ -20,18 +21,25 @@ namespace Lonely_Wolf
             this.CurrentHealth = this.HealthPoints;
         }
 
-        public override Animation CurrentEnemy
-        {
-            get { return this._currentEnemy; }
-            set { this._currentEnemy = value; }
-        }
 
-
-
+       
+        
         public override void LoadCharacterContent(ContentManager Content)
         {
-            _currentEnemy = new Animation(Content, this, "Skeleton_collision", 150f, 1, false);
+           // CurrentEnemy = new Animation(Content, this, "Skeleton_collision", 150f, 1, false);
+            WalkingRight = new Animation(Content, this, "Skeleton-walking_right", 150f, 6, true);
+            WalkingLeft = new Animation(Content, this, "Skeleton-walking_left", 150f, 6, true);
+            Attack_Right_Mid = new Animation(Content, this, "Skeleton-attack_right_mid", 150f, 8, true);
+            Attack_Left_Mid = new Animation(Content, this, "Skeleton-attack_left_mid", 150f, 8, true);
+            CurrentAnimation = WalkingRight;
             this.HealthBar = new HealthBar(Content, this);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            AI.Move(this,MainCharacter.MainCharactersList[0]);
+            
         }
     }
 }
