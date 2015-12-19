@@ -7,6 +7,7 @@ using System.Threading;
 using System.Web.UI.WebControls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Lonely_Wolf.Models.Items;
 
 namespace Lonely_Wolf
 {
@@ -24,6 +25,7 @@ namespace Lonely_Wolf
             get { return isFirstTime; }
             set { isFirstTime = value; }
         }*/
+
         public static void DetectCollision(GameTime gameTime)
         {
             foreach (var mainCharacter in MainCharacter.MainCharactersList)
@@ -33,17 +35,19 @@ namespace Lonely_Wolf
                     if ((mainCharacter.Rectangle).Intersects(enemy.Rectangle))
                     {
 
-                        if (enemy.CurrentAnimation == enemy.WalkingRight || enemy.CurrentAnimation == enemy.Attack_Right_Mid)
+                        if (enemy.CurrentAnimation == enemy.WalkingRight ||
+                            enemy.CurrentAnimation == enemy.Attack_Right_Mid)
                         {
-                           enemy.CurrentAnimation = enemy.Attack_Right_Mid;
-                           enemy.CurrentAnimation.PlayAnimation(gameTime);
+                            enemy.CurrentAnimation = enemy.Attack_Right_Mid;
+                            enemy.CurrentAnimation.PlayAnimation(gameTime);
                         }
-                        if (enemy.CurrentAnimation == enemy.WalkingLeft || enemy.CurrentAnimation == enemy.Attack_Left_Mid)
+                        if (enemy.CurrentAnimation == enemy.WalkingLeft ||
+                            enemy.CurrentAnimation == enemy.Attack_Left_Mid)
                         {
                             enemy.CurrentAnimation = enemy.Attack_Left_Mid;
                             enemy.CurrentAnimation.PlayAnimation(gameTime);
                         }
-                            /*
+                        /*
                         else
                         {
                             enemy.CurrentAnimation = enemy.Attack_Left_Mid;
@@ -72,19 +76,30 @@ namespace Lonely_Wolf
                         {
                             enemy.CurrentAnimation = enemy.Attack_Right_Mid;
                             mainCharacter.CurrentHealth = mainCharacter.CurrentHealth - enemy.AttackPoints;
-                        }  
-                                // MessageBox(new IntPtr(0), enemy.CurrentHealth + "", "Warning", 3);                      
-                            
                         }
+                        // MessageBox(new IntPtr(0), enemy.CurrentHealth + "", "Warning", 3);                      
+
                     }
                 }
             }
-        /*
+            foreach (var mainCharacter in MainCharacter.MainCharactersList)
+            {
+                foreach (var items in Items.ItemsList)
+                {
+                    if ((mainCharacter.Rectangle).Intersects(items.Rectangle))
+                    {
+                        items.Get(mainCharacter);
+                       
+                    }
+                }
+            }
+            /*
+
         public Animation CurrentEnemyAnimation()
         {
             
         }*/
-           /*
+            /*
             * if (enemy.IsAttackAvaibleMethod()
                             && ((enemy.CurrentAnimation.Equals(enemy.Attack_Left_Mid)
                                  && enemy.CurrentAnimation.CurrentFrame.Equals(4))
@@ -100,3 +115,4 @@ namespace Lonely_Wolf
             */
         }
     }
+}

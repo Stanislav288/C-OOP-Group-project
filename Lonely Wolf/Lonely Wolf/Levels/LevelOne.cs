@@ -1,4 +1,8 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using Lonely_Wolf.Models.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -17,7 +21,12 @@ namespace Lonely_Wolf
         KeyboardState inputHandler;
         public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 75, 110));
         public Enemy enemy1 = new Skeleton(200, 200, 53, 84, new Rectangle(200, 200, 53, 84));
-
+        Sword sword = new Sword(300, 300);
+        HealthPortion health = new HealthPortion(400, 400);
+        Shield shield=new Shield(500,100);
+        Herb herb=new Herb(500,200);
+        Ring ring =new Ring(450 ,50);
+        private List<ITemporary> temporary = Items.ItemsList.OfType<ITemporary>().ToList();
        
         public LevelOne()
         {
@@ -39,7 +48,10 @@ namespace Lonely_Wolf
             //collisionExample = Content.Load<Texture2D>("collision");
            crusader1.LoadCharacterContent(Content);
            enemy1.LoadCharacterContent(Content);
-
+            foreach (var item in Items.ItemsList)
+            {
+                item.LoadItemContent(Content);
+            }
         }
 
 
@@ -62,10 +74,17 @@ namespace Lonely_Wolf
               crusader1,
               gameTime);
          //enemy1.CurrentAnimation.PlayAnimation(gameTime);
-
+            foreach (var item in temporary)
+            {
+                if (!item.IsFinished&&!item.IsAvalable)
+                {
+                    item.Update(gameTime);
+                }
+               
+            }
           crusader1.Update(gameTime);
           enemy1.Update(gameTime);
-            base.Update(gameTime);           
+          
         }
 
         protected override void Draw(GameTime gameTime)
@@ -78,7 +97,11 @@ namespace Lonely_Wolf
             enemy1.CurrentAnimation.Draw(spriteBatch);
             enemy1.HealthBar.Draw(spriteBatch);
             crusader1.HealthBar.Draw(spriteBatch);
-           
+            foreach (var item in Items.ItemsList.Where(i=>i.IsAvalable==true))
+            {
+                item.Draw(spriteBatch);
+            }
+            
             //spriteBatch.Draw(spriteTexture, SpriteREct, SpriteColor);
            // crusader1.Rectangle.
             spriteBatch.End();

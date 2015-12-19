@@ -53,6 +53,15 @@
     <Compile Include="Contracts\IAttackable.cs" />
     <Compile Include="Contracts\IMovable.cs" />
     <Compile Include="Levels\LevelOne.cs" />
+    <Compile Include="Models\Items\HealthPortion.cs" />
+    <Compile Include="Models\Items\Herb.cs" />
+    <Compile Include="Models\Items\IItem.cs" />
+    <Compile Include="Models\Items\ITemporary.cs" />
+    <Compile Include="Models\Items\Items.cs" />
+    <Compile Include="Models\Items\Ring.cs" />
+    <Compile Include="Models\Items\Shield.cs" />
+    <Compile Include="Models\Items\Sword.cs" />
+    <Compile Include="Models\Items\TemporaryItem.cs" />
     <Compile Include="Models\MainCharacter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +98,7 @@
     <Content Include="Content\HealthGauge.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\HealthPortion.PNG" />
     <Content Include="Content\Skeleton-attack_left_mid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -104,6 +114,7 @@
     <Content Include="Content\Skeleton_collision.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Sword.PNG" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
