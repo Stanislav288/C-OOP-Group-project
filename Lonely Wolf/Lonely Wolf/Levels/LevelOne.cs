@@ -16,8 +16,8 @@ namespace Lonely_Wolf
 
         KeyboardState inputHandler;
         public Crusader crusader1 = new Crusader(100, 100, 50, 50, new Rectangle(100, 100, 75, 110));
-        public Enemy enemy1 = new Skeleton(200, 200, 53, 84, new Rectangle(200, 200, 53, 84));
-
+        public Enemy enemy1 = new Skeleton(400, 400, 81, 87, new Rectangle(400, 400, 81, 87));
+        public Enemy enemy2 = new Skeleton(200, 200, 81, 87, new Rectangle(200, 200, 81, 87));
        
         public LevelOne()
         {
@@ -37,9 +37,10 @@ namespace Lonely_Wolf
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             //collisionExample = Content.Load<Texture2D>("collision");
-           crusader1.LoadCharacterContent(Content);
-           enemy1.LoadCharacterContent(Content);
+            crusader1.LoadCharacterContent(Content);
 
+           enemy1.LoadCharacterContent(Content);
+           enemy2.LoadCharacterContent(Content);
         }
 
 
@@ -64,7 +65,10 @@ namespace Lonely_Wolf
          //enemy1.CurrentAnimation.PlayAnimation(gameTime);
 
           crusader1.Update(gameTime);
+
           enemy1.Update(gameTime);
+          enemy2.Update(gameTime);
+
             base.Update(gameTime);           
         }
 
@@ -73,12 +77,15 @@ namespace Lonely_Wolf
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+
             crusader1.CurrentAnimation.Draw(spriteBatch);
+            crusader1.HealthBar.Draw(spriteBatch);
             //spriteBatch.Draw(collisionExample,collisionExamplePosition);
             enemy1.CurrentAnimation.Draw(spriteBatch);
             enemy1.HealthBar.Draw(spriteBatch);
-            crusader1.HealthBar.Draw(spriteBatch);
-           
+
+            enemy2.CurrentAnimation.Draw(spriteBatch);
+            enemy2.HealthBar.Draw(spriteBatch);
             //spriteBatch.Draw(spriteTexture, SpriteREct, SpriteColor);
            // crusader1.Rectangle.
             spriteBatch.End();

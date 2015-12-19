@@ -29,8 +29,8 @@ namespace Lonely_Wolf
            // CurrentEnemy = new Animation(Content, this, "Skeleton_collision", 150f, 1, false);
             WalkingRight = new Animation(Content, this, "Skeleton-walking_right", 150f, 6, true);
             WalkingLeft = new Animation(Content, this, "Skeleton-walking_left", 150f, 6, true);
-            Attack_Right_Mid = new Animation(Content, this, "Skeleton-attack_right_mid", 150f, 8, true);
-            Attack_Left_Mid = new Animation(Content, this, "Skeleton-attack_left_mid", 150f, 8, true);
+            Attack_Right_Mid = new Animation(Content, this, "Skeleton-attack_right_mid", 250f, 8, true);
+            Attack_Left_Mid = new Animation(Content, this, "Skeleton-attack_left_mid", 250f, 8, true);
             CurrentAnimation = WalkingRight;
             this.HealthBar = new HealthBar(Content, this);
         }
@@ -38,7 +38,7 @@ namespace Lonely_Wolf
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            AI.Move(this,MainCharacter.MainCharactersList[0]);
+            //AI.Move(this,MainCharacter.MainCharactersList[0]);
             
         }
     }

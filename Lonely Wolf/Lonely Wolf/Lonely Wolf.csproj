@@ -39,6 +39,7 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Enums\Directions.cs" />
     <Compile Include="GameUI\Animation.cs" />
     <Compile Include="Contracts\IArtificialIntellect.cs" />
     <Compile Include="Models\AI.cs" />
