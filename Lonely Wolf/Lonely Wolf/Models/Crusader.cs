@@ -15,7 +15,6 @@ namespace Lonely_Wolf
         public Crusader(int x, int y, int width, int height, Rectangle rectangle)
             : base(x, y, width, height, rectangle)
         {
-
             this.HealthPoints = (int)Enums.CrusaderStats.Health;
             this.AttackPoints = (int)Enums.CrusaderStats.Attack;
             this.DefensePoints = (int)Enums.CrusaderStats.Defense;

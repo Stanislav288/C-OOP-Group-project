@@ -4,14 +4,14 @@
     <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AADIAAAAgAAAAgAAAAQAAIRAACAgRAAgAgRgAAAAYAA=</HashCode>
-      <FileName>GameUI\Animation.cs</FileName>
+      <FileName>Animation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Lonely_Wolf.CollisionEngine" Collapsed="true">
+  <Class Name="Lonely_Wolf.Collision" Collapsed="true">
     <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameEngine\CollisionEngine.cs</FileName>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Collision.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lonely_Wolf.GameObject" Collapsed="true">
@@ -24,8 +24,8 @@
   <Class Name="Lonely_Wolf.HealthBar" Collapsed="true">
     <Position X="5.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>NgQAgBAIAAQAAwAAAAAAIAAAAAAAAAAAAAAAACAAYAQ=</HashCode>
-      <FileName>GameUI\HealthBar.cs</FileName>
+      <HashCode>NgQAgBAIAAQAAwAgAAAAIAAAAAAAAAAAAAAAACAAYAQ=</HashCode>
+      <FileName>HealthBar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lonely_Wolf.InputHandler" Collapsed="true">
@@ -38,14 +38,14 @@
   <Class Name="Lonely_Wolf.LevelOne" Collapsed="true">
     <Position X="9" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEEAAAgAAEwABAAAEAAAAAgAAAAgAAEEAABAAAE4=</HashCode>
+      <HashCode>AAQAEEAAAAAAAwAAAAAAAAAAAAAEAAgAAEEAABAAAEY=</HashCode>
       <FileName>Levels\LevelOne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lonely_Wolf.Characters" Collapsed="true">
     <Position X="2" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQQwAAAUIAAAEAAAggAIQQIAAAFAAACARBhIQAQACA=</HashCode>
+      <HashCode>AAQAAAAAQIAAAEAAAAgAAQQIAAAEAAACABBgAQAQAAA=</HashCode>
       <FileName>Models\Characters.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -53,28 +53,28 @@
   <Class Name="Lonely_Wolf.Crusader" Collapsed="true">
     <Position X="3" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQBAAAAAggAAgAAAAIAAAAAkAAAADAAADIAAAADA=</HashCode>
       <FileName>Models\Crusader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lonely_Wolf.Enemy" Collapsed="true">
     <Position X="0.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAACAAAAAgA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAAAAAgA=</HashCode>
       <FileName>Models\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lonely_Wolf.MainCharacter" Collapsed="true">
     <Position X="3" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAQAAAAAAABAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAQAAAAAAABAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\MainCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lonely_Wolf.Skeleton" Collapsed="true">
     <Position X="0.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAQAAAAAAAAAQAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Models\Skeleton.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -91,62 +91,6 @@
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AI.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Lonely_Wolf.Models.Items.HealthPortion" Collapsed="true">
-    <Position X="11.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Items\HealthPortion.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Lonely_Wolf.Models.Items.Herb" Collapsed="true">
-    <Position X="17.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>Models\Items\Herb.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Lonely_Wolf.Models.Items.Items" Collapsed="true">
-    <Position X="16" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAYgBAgAAAAYAAgAIAIAAEgAAAAAAAACA=</HashCode>
-      <FileName>Models\Items\Items.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Lonely_Wolf.Models.Items.Ring" Collapsed="true">
-    <Position X="19.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>Models\Items\Ring.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Lonely_Wolf.Models.Items.Shield" Collapsed="true">
-    <Position X="13.75" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Items\Shield.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Lonely_Wolf.Models.Items.Sword" Collapsed="true">
-    <Position X="16" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Items\Sword.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Lonely_Wolf.Models.Items.TemporaryItem" Collapsed="true">
-    <Position X="18" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQIAAAAACAAAABAAAAAAAAAAAAAAAAABAAgAAQACAQ=</HashCode>
-      <FileName>Models\Items\TemporaryItem.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Lonely_Wolf.Interfaces.IArtificialIntellect" Collapsed="true">
     <Position X="5.5" Y="3.75" Width="1.5" />
@@ -167,20 +111,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IMovable.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Lonely_Wolf.Models.Items.IItem" Collapsed="true">
-    <Position X="12" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Items\IItem.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Lonely_Wolf.Models.Items.ITemporary" Collapsed="true">
-    <Position X="12" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
-      <FileName>Models\Items\ITemporary.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Lonely_Wolf.Enums.CrusaderStats" Collapsed="true">
