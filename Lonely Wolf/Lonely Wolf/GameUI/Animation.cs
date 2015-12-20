@@ -78,6 +78,8 @@ namespace Lonely_Wolf
         }
         public void PlayAnimation(GameTime gameTime)
         {
+
+            
             elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             sourceRectangle = new Rectangle(this.CurrentFrame * frameWidth, 0, frameWidth, frameHeight);
 
@@ -103,5 +105,6 @@ namespace Lonely_Wolf
         {
             spriteBatch.Draw(animation, new Vector2(gameObject.X, gameObject.Y), sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
         }
+ 
     }
 }

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Lonely_Wolf.Models;
 using Microsoft.Xna.Framework;
+<<<<<<< HEAD
 using Lonely_Wolf.Enums;
+=======
+using Microsoft.Xna.Framework.Graphics;
+using Lonely_Wolf.Models.Items;
+>>>>>>> origin/master
 
 namespace Lonely_Wolf
 {
@@ -21,6 +26,7 @@ namespace Lonely_Wolf
             get { return isFirstTime; }
             set { isFirstTime = value; }
         }*/
+
         public static void DetectCollision(GameTime gameTime)
         {
             foreach (var mainCharacter in MainCharacter.MainCharactersList)
@@ -30,17 +36,34 @@ namespace Lonely_Wolf
                     if ((mainCharacter.Rectangle).Intersects(enemy.Rectangle))
                     {
 
-                        if (enemy.CurrentAnimation == enemy.WalkingRight || enemy.CurrentAnimation == enemy.Attack_Right_Mid)
+                        if (enemy.CurrentAnimation == enemy.WalkingRight ||
+                            enemy.CurrentAnimation == enemy.Attack_Right_Mid)
                         {
                             enemy.CurrentAnimation = enemy.Attack_Right_Mid;
                             enemy.CurrentAnimation.PlayAnimation(gameTime);
                         }
-                        if (enemy.CurrentAnimation == enemy.WalkingLeft || enemy.CurrentAnimation == enemy.Attack_Left_Mid)
+                        if (enemy.CurrentAnimation == enemy.WalkingLeft ||
+                            enemy.CurrentAnimation == enemy.Attack_Left_Mid)
                         {
                             enemy.CurrentAnimation = enemy.Attack_Left_Mid;
                             enemy.CurrentAnimation.PlayAnimation(gameTime);
                         }
+<<<<<<< HEAD
 
+=======
+                        /*
+                        else
+                        {
+                            enemy.CurrentAnimation = enemy.Attack_Left_Mid;
+                           // currentAnimation.PlayAnimation(gameTime);
+                        }
+                        /*
+                        enemy.CurrentAnimation =
+                            enemy.CurrentAnimation == enemy.WalkingLeft
+                                ? enemy.Attack_Left_Mid
+                                : enemy.Attack_Right_Mid;
+                        */
+>>>>>>> origin/master
                         if (mainCharacter.IsAttackAvaibleMethod()
                             && ((mainCharacter.CurrentAnimation.Equals(mainCharacter.Attack_Left_Mid)
                                  && mainCharacter.CurrentAnimation.CurrentFrame.Equals(4))
@@ -64,6 +87,7 @@ namespace Lonely_Wolf
                     }
                 }
             }
+<<<<<<< HEAD
 
             for (int i = 0; i < Enemy.EnemiesList.Count; i++)
             {
@@ -132,6 +156,22 @@ namespace Lonely_Wolf
 /// 
 /*
         public List<GameObject> RayCast(int x, int y, Directions direction, int length, int widthOfTheRay)
+=======
+            foreach (var mainCharacter in MainCharacter.MainCharactersList)
+            {
+                foreach (var items in Items.ItemsList)
+                {
+                    if ((mainCharacter.Rectangle).Intersects(items.Rectangle))
+                    {
+                        items.Get(mainCharacter);
+                       
+                    }
+                }
+            }
+            /*
+
+        public Animation CurrentEnemyAnimation()
+>>>>>>> origin/master
         {
             List<GameObject> result = new List<GameObject>();
 
@@ -190,5 +230,25 @@ namespace Lonely_Wolf
 
             return result;
         }*/
+<<<<<<< HEAD
     }
 }
+=======
+            /*
+            * if (enemy.IsAttackAvaibleMethod()
+                            && ((enemy.CurrentAnimation.Equals(enemy.Attack_Left_Mid)
+                                 && enemy.CurrentAnimation.CurrentFrame.Equals(4))
+                                || (enemy.CurrentAnimation.Equals(enemy.Attack_Right_Mid)
+                                    && enemy.CurrentAnimation.CurrentFrame.Equals(4))))
+                        {
+                            enemy.CurrentAnimation = enemy.Attack_Right_Mid;
+                            mainCharacter.CurrentHealth = mainCharacter.CurrentHealth - enemy.AttackPoints;
+                        }  
+            * 
+            * 
+            * 
+            */
+        }
+    }
+}
+>>>>>>> origin/master

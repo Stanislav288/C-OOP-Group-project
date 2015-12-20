@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/vb/Desktop/su/oop/team project/CSharp-OOP-Group-project/trunk/Lonely Wolf/Lonely Wolf/Content/Herb.PNG</File>
+    <File>C:/Users/vb/Desktop/su/oop/team project/CSharp-OOP-Group-project/trunk/Lonely Wolf/Lonely Wolf/Content/Ring.PNG</File>
+    <File>C:/Users/vb/Desktop/su/oop/team project/CSharp-OOP-Group-project/trunk/Lonely Wolf/Lonely Wolf/Content/Sword.PNG</File>
+    <File>C:/Users/vb/Desktop/su/oop/team project/CSharp-OOP-Group-project/trunk/Lonely Wolf/Lonely Wolf/Content/Shield.PNG</File>
+    <File>C:/Users/vb/Desktop/su/oop/team project/CSharp-OOP-Group-project/trunk/Lonely Wolf/Lonely Wolf/Content/HealthPortion.PNG</File>
+  </SourceFiles>
+</SourceFileCollection>
